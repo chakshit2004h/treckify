@@ -93,10 +93,12 @@ class _LoginState extends State<Login> {
                         color: Colors.blue,
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child:  Row(
+                      child:  const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
+                          FaIcon(FontAwesomeIcons.google,color: Colors.white,),
+                          SizedBox(width: 10,),
                           Text("Login via Google",style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.bold),)
                         ],
                       ),
