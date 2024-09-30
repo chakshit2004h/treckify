@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'communities.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -116,7 +118,7 @@ class _HomeState extends State<Home> {
               leading: const Icon(Icons.group, color: Colors.white),
               title: const Text('Communities', style: TextStyle(color: Colors.white)),
               onTap: () {
-                Navigator.pop(context); // Handle communities tap
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Communities())); // Handle communities tap
               },
             ),
             ListTile(
