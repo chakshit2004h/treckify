@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:treckify/pages/createcommunity.dart';
+import 'package:treckify/pages/join.dart';
 
 import 'home.dart';
 
@@ -276,14 +277,19 @@ class _CommunitiesState extends State<Communities> {
                         ),
                         const SizedBox(height: 10,),
                         const Text("10000 Members",style: TextStyle(fontSize: 20,color: Colors.grey,),),
-                        Container(
-                          width: 330,
-                          height: 47,
-                          decoration: const BoxDecoration(
-                            color: Color(0xFFD2F366),
-                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20))
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(context,MaterialPageRoute(builder: (context) => const Join_community()));
+                          },
+                          child: Container(
+                            width: 330,
+                            height: 47,
+                            decoration: const BoxDecoration(
+                              color: Color(0xFFD2F366),
+                              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20))
+                            ),
+                            child: const Center(child: Text("Join Community",style: TextStyle(color: Colors.black,fontSize: 22,fontWeight: FontWeight.bold),),),
                           ),
-                          child: const Center(child: Text("Join Community",style: TextStyle(color: Colors.black,fontSize: 22,fontWeight: FontWeight.bold),),),
                         ),
                       ],
                     ),
