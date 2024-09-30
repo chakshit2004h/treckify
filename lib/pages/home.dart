@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:treckify/pages/travelbuddy.dart';
 
 import 'communities.dart';
 
@@ -132,7 +133,7 @@ class _HomeState extends State<Home> {
               leading: const Icon(Icons.person_pin_circle, color: Colors.white),
               title: const Text('Travel Buddy', style: TextStyle(color: Colors.white)),
               onTap: () {
-                Navigator.pop(context); // Handle travel buddy tap
+                Navigator.push(context,MaterialPageRoute(builder: (context) => TravelDialogBox())); // Handle travel buddy tap
               },
             ),
             ListTile(

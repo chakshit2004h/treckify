@@ -5,6 +5,7 @@ import 'package:treckify/pages/home.dart';
 import 'package:treckify/pages/login.dart';
 import 'package:treckify/pages/signup.dart';
 import 'package:treckify/pages/splashscreen.dart';
+import 'package:treckify/pages/travelbuddy.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Home(),
+      home: TravelDialogBox(),
     );
   }
 }
