@@ -83,9 +83,8 @@ class _SplashscreenState extends State<Splashscreen> with SingleTickerProviderSt
             // Logo animation
             FadeTransition(
               opacity: _logoOpacityAnimation,
-              child: Image.asset("assets/images/tlogo.png"),
+              child: Image.asset("assets/images/final_logo.png"),
             ),
-            const SizedBox(height: 20),
             // App name animation
             FadeTransition(
               opacity: _textOpacityAnimation,

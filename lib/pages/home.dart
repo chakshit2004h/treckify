@@ -30,23 +30,29 @@ class _HomeState extends State<Home> {
   // Define a GlobalKey for the Scaffold
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  // Toggle variables
+  bool _isLessExpensiveSelected = false;
+  bool _isMostPopularSelected = false;
+  bool _isBudgetTripSelected = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey, // Attach the key to Scaffold
       appBar: AppBar(
+        leading: Builder(
+          builder: (context) => IconButton(
+            onPressed: (){
+              Scaffold.of(context).openDrawer();
+            },
+            icon: const Icon(Icons.menu,color: Colors.white,size: 30,),
+          ),
+        ),
         backgroundColor: const Color(0xFF141527), // Same background color
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            IconButton(
-              icon: const Icon(Icons.menu, color: Colors.white),
-              onPressed: () {
-                // Use the Scaffold key to open the drawer
-                _scaffoldKey.currentState?.openDrawer();
-              },
-            ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -87,25 +93,23 @@ class _HomeState extends State<Home> {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
-              decoration: const BoxDecoration(
+            const DrawerHeader(
+              decoration: BoxDecoration(
                 color: Color(0xFF292B40),
               ),
-              child: const Text(
-                'Menu',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontFamily: "ibm",
-                  fontWeight: FontWeight.bold,
-                ),
+              child: Row(
+                children: [
+                  Icon(Icons.account_circle_sharp,size: 120,color: Colors.white,),
+                  SizedBox(width: 20,),
+                  Text("Marry",style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Colors.white,fontFamily: "ibm"),)
+                ],
               ),
             ),
             ListTile(
               leading: const Icon(Icons.home, color: Colors.white),
               title: const Text('Home', style: TextStyle(color: Colors.white)),
               onTap: () {
-                Navigator.pop(context); // Close the drawer
+                Navigator.push(context,MaterialPageRoute(builder: (context)=> Home())); // Close the drawer
               },
             ),
             ListTile(
@@ -379,8 +383,86 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 const SizedBox(height: 30),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ToggleButton(
+                        title: "Less Expensive",
+                        isSelected: _isLessExpensiveSelected,
+                        onPressed: () {
+                          setState(() {
+                            _isLessExpensiveSelected = true;
+                            _isMostPopularSelected = false;
+                            _isBudgetTripSelected = false;
+                          });
+                        },
+                      ),
+                      ToggleButton(
+                        title: "Most Popular",
+                        isSelected: _isMostPopularSelected,
+                        onPressed: () {
+                          setState(() {
+                            _isLessExpensiveSelected = false;
+                            _isMostPopularSelected = true;
+                            _isBudgetTripSelected = false;
+                          });
+                        },
+                      ),
+                      ToggleButton(
+                        title: "Budget Trip",
+                        isSelected: _isBudgetTripSelected,
+                        onPressed: () {
+                          setState(() {
+                            _isLessExpensiveSelected = false;
+                            _isMostPopularSelected = false;
+                            _isBudgetTripSelected = true;
+                          });
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 50,),
               ],
             ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// toggle_button.dart
+class ToggleButton extends StatelessWidget {
+  final String title;
+  final bool isSelected;
+  final VoidCallback onPressed;
+
+  const ToggleButton({
+    Key? key,
+    required this.title,
+    required this.isSelected,
+    required this.onPressed,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        decoration: BoxDecoration(
+          color: isSelected ? const Color(0xFFD2F366) : const Color(0xFF292B40),
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Text(
+          title,
+          style: TextStyle(
+            fontSize: 15,
+            color: isSelected ? Colors.black : Colors.white,
+            fontWeight: FontWeight.w500,
           ),
         ),
       ),

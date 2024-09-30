@@ -72,21 +72,22 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   const SizedBox(height: 10,),
-                  Container(
-                    width: 300,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: const Center(child: Text("Log in",style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.bold),)),
-                  ),
-                  const SizedBox(height: 10,),
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context) => const Home()));
+                      Navigator.push(context,MaterialPageRoute(builder: (context) => Home()));
                     },
                     child: Container(
+                      width: 300,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Center(child: Text("Log in",style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.bold),)),
+                    ),
+                  ),
+                  const SizedBox(height: 10,),
+                  Container(
                       width: 300,
                       height: 50,
                       decoration: BoxDecoration(
@@ -103,7 +104,6 @@ class _LoginState extends State<Login> {
                         ],
                       ),
                     ),
-                  ),
                   const SizedBox(height: 10,),
                   Container(
                     width: 300,
