@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:treckify/pages/travelbuddy.dart';
+import 'package:treckify/pages/travelguide.dart';
 
 import 'communities.dart';
 
@@ -140,7 +141,7 @@ class _HomeState extends State<Home> {
               leading: const Icon(Icons.map, color: Colors.white),
               title: const Text('Travel Guide', style: TextStyle(color: Colors.white)),
               onTap: () {
-                Navigator.pop(context); // Handle travel guide tap
+                Navigator.push(context, MaterialPageRoute(builder: (context) => TravelGuide()));
               },
             ),
             ListTile(
