@@ -60,6 +60,37 @@ class _Join_communityState extends State<Join_community> {
                     ),
                   ],
                 ),
+                const SizedBox(height: 20,),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20.0),
+                      child: Container(
+                        width: 150,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFD2F366),
+                          borderRadius: BorderRadius.circular(20)
+                        ),
+                        child: const Center(child: Text("Create",style: TextStyle(fontSize: 25,color: Colors.black,fontWeight: FontWeight.bold),)),
+                      ),
+                    ),
+                    const SizedBox(width: 10,),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 30.0),
+                      child: Container(
+                        width: 150,
+                        height: 50,
+                        decoration: BoxDecoration(
+                            color: const Color(0xFFD2F366),
+                            borderRadius: BorderRadius.circular(20)
+                        ),
+                        child: const Center(child: Text("F&Q",style: TextStyle(fontSize: 25,color: Colors.black,fontWeight: FontWeight.bold),)),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20,),
                 Padding(
                   padding: const EdgeInsets.only(top: 10.0,left: 20.0),
                   child: const Text("Featured",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 25,),),
