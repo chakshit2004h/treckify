@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:treckify/pages/communities.dart';
 import 'package:treckify/pages/createcommunity.dart';
 import 'package:treckify/pages/home.dart';
+import 'package:treckify/pages/hotels.dart';
 import 'package:treckify/pages/john.dart';
 import 'package:treckify/pages/login.dart';
 import 'package:treckify/pages/signup.dart';
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Home(),
+      home: Hotels(),
     );
   }
 }

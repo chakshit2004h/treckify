@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:treckify/pages/createcommunity.dart';
+import 'package:treckify/pages/hotels.dart';
 import 'package:treckify/pages/join.dart';
+import 'package:treckify/pages/travelbuddy.dart';
+import 'package:treckify/pages/travelguide.dart';
 
 import 'home.dart';
 
@@ -99,31 +102,24 @@ class _CommunitiesState extends State<Communities> {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.feed, color: Colors.white),
-              title: const Text('Feed', style: TextStyle(color: Colors.white)),
-              onTap: () {
-                Navigator.pop(context); // Handle feed tap
-              },
-            ),
-            ListTile(
               leading: const Icon(Icons.person_pin_circle, color: Colors.white),
               title: const Text('Travel Buddy', style: TextStyle(color: Colors.white)),
               onTap: () {
-                Navigator.pop(context); // Handle travel buddy tap
+                Navigator.push(context, MaterialPageRoute(builder: (context) => TravelDialogBox())); // Handle travel buddy tap
               },
             ),
             ListTile(
               leading: const Icon(Icons.map, color: Colors.white),
               title: const Text('Travel Guide', style: TextStyle(color: Colors.white)),
               onTap: () {
-                Navigator.pop(context); // Handle travel guide tap
+                Navigator.push(context, MaterialPageRoute(builder: (context) => TravelGuide()));// Handle travel guide tap
               },
             ),
             ListTile(
               leading: const Icon(Icons.hotel, color: Colors.white),
               title: const Text('Hotels', style: TextStyle(color: Colors.white)),
               onTap: () {
-                Navigator.pop(context); // Handle hotels tap
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Hotels())); // Handle hotels tap
               },
             ),
             ListTile(
