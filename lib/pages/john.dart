@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:treckify/pages/home.dart';
 
 class JohnDoe extends StatefulWidget {
   const JohnDoe({super.key});
@@ -344,7 +345,21 @@ class _JohnDoeState extends State<JohnDoe> {
                                   fontSize: 20,
                                 ),
                               ),
-                            const SizedBox(height: 30,)
+                            const SizedBox(height: 10,),
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+                              },
+                              child: Container(
+                                width: 120,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFFD2F366),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: const Center(child: Text("Finish",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black,fontSize: 20),)),
+                              ),
+                            ),
                           ],
                         ),
                       ),
